@@ -47,4 +47,22 @@ public:
 };
 
 // Function prototypes
-void readDataFromFile(vector<Movie>& movies, cons
+void readDataFromFile(vector<Movie>& movies,  string& filename);
+
+int main() {
+    vector<Movie> movies;
+
+    readDataFromFile(movies, "input.txt");
+
+
+    return 0;
+}
+
+
+void readDataFromFile(vector<Movie>& movies, string& filename) {
+    ifstream inFile(filename);
+    if (!inFile) {
+        cerr << "Error: Unable to open file " << filename << endl;
+        return;
+    }
+    while (!inFil
