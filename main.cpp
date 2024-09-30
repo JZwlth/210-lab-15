@@ -47,7 +47,7 @@ public:
 };
 
 // Function prototypes
-void readDataFromFile(vector<Movie>& movies,  string& filename);
+void readDataFromFile(vector<Movie>& movies, const string& filename);
 
 int main() {
     vector<Movie> movies;
@@ -59,10 +59,26 @@ int main() {
 }
 
 
-void readDataFromFile(vector<Movie>& movies, string& filename) {
+void readDataFromFile(vector<Movie>& movies, const string& filename) {
     ifstream inFile(filename);
     if (!inFile) {
         cerr << "Error: Unable to open file " << filename << endl;
         return;
     }
-    while (!inFil
+
+    while (!inFile.eof()) {
+        string title, screenWriter;
+        int yearReleased;
+
+        getline(inFile, title);
+        inFile >> yearReleased;
+        inFile.ignore(); // To skip the newline character after reading the year
+        getline(inFile, screenWriter);
+
+        Movie tempMovie;
+        tempMovie.setTitle(title);
+        tempMovie.setYe
+    }
+
+    inFile.close();
+}
