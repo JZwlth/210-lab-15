@@ -54,6 +54,10 @@ int main() {
 
     readDataFromFile(movies, "input.txt");
 
+    for (const Movie& movie : movies) {
+        movie.print();
+        cout << endl;
+    }
 
     return 0;
 }
@@ -77,7 +81,10 @@ void readDataFromFile(vector<Movie>& movies, const string& filename) {
 
         Movie tempMovie;
         tempMovie.setTitle(title);
-        tempMovie.setYe
+        tempMovie.setYearReleased(yearReleased);
+        tempMovie.setScreenWriter(screenWriter);
+
+        movies.push_back(tempMovie);
     }
 
     inFile.close();
