@@ -41,4 +41,10 @@ public:
 
     void print() const {
         cout << "Movie: " << screenWriter << endl;
-        co
+        cout << "Year released: " << yearReleased << endl;
+        cout << "Screenwriter: " << title << endl;
+    }
+};
+
+// Function prototypes
+void readDataFromFile(vector<Movie>& movies, cons
